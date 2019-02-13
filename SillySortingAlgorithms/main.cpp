@@ -6,14 +6,16 @@
 
 int main()
 {
-	std::vector <int> input;
+	SillySort algorithms;
+	std::vector <int> input(5);
 	for (int i = 0; i < 5; i++)
 	{
 		input[i] = i;
 	}
 	input[2] = 15;
-	SillySort.PrintArray(int* input);
-	std::string check = SillySort.CheckSortedArray(input);
+	input = algorithms.StalinSort(input);
+	algorithms.PrintArray(input);
+	std::string check = algorithms.CheckSortedArray(input);
 	std::cout << check << std::endl;
 }
 

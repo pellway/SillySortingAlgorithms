@@ -1,9 +1,11 @@
+#include "pch.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
 class SillySort
 {
+	public:
 	std::vector <int> StalinSort(std::vector <int> array)
 	{
 		// Deletes any elements out of order, returns a sorted list
@@ -11,7 +13,7 @@ class SillySort
 		{
 			if (array[i] < array[i - 1])
 			{
-				array.erase(array.begin() + i);
+				array.erase(array.begin() + i-1);
 				i--;
 			}
 		}
