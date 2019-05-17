@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 class SillySort
 {
@@ -87,14 +88,16 @@ class SillySort
 		return array;
 	}
 
-	std::vector <int> CapitalismSort(std::vector <int> array)
+	std::vector <int> RandomSort(std::vector <int> array)
 	{
-		// Sort by highest to lowest, each smaller value is deducted 5%, which is added to the largest value
-	}
-
-	std::vector <int> QuantumSort(std::vector <int> array)
-	{
-		// randomise the list, if not sorted, print unlucky message, else return sorted array
+		// Randomise the list. If not sorted, repeat until array is sorted
+		std::random_shuffle(array.begin(), array.end());
+		for (int i = 1; i < array.size(); i++)
+		{
+			if (array[i - 1] > array[i])
+				return RandomSort(array);
+		}
+		return array;
 	}
 
 	std::string CheckSortedArray(std::vector <int> array)
